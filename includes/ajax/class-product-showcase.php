@@ -34,7 +34,7 @@ class ProductShowcase {
 		}
 
 		$args = array(
-			'post_type' => 'tsproduct_showcase',
+			'post_type' => 'ts-product-showcase',
 			'posts_per_page' => -1,
             'orderby' => 'date',
             'order' => 'DESC'
@@ -70,7 +70,7 @@ class ProductShowcase {
 		$post_id = isset( $_POST['post_id'] ) ? (int) $_POST['post_id'] : 0;
 
 		$args = array(
-			'post_type' => 'tsproduct_showcase',
+			'post_type' => 'ts-product-showcase',
 			'p'         => $post_id,
 		);
 
@@ -85,30 +85,30 @@ class ProductShowcase {
 		$post_id = get_the_ID();
 
 		// Get the team member IDs stored as meta data
-		$team_member_ids   = get_post_meta( $post_id, 'tsteam_team_members', true );
-		$showcase_settings = get_post_meta( $post_id, 'tsteam_showcase_settings', true );
-
-		if ( ! empty( $team_member_ids ) && is_array( $team_member_ids ) ) {
-			$team_members_result = Helper::get_team_members_by_ids( $team_member_ids );
-
-			if ( $team_members_result['error'] ) {
-				wp_send_json_error( array( 'message' => $team_members_result['message'] ) );
-				return;
-			}
-
-			$team_members = $team_members_result['team_members'];
-		} else {
-			$team_members = array();
-		}
+// 		$team_member_ids   = get_post_meta( $post_id, 'tsteam_team_members', true );
+// 		$showcase_settings = get_post_meta( $post_id, 'tsteam_showcase_settings', true );
+//
+// 		if ( ! empty( $team_member_ids ) && is_array( $team_member_ids ) ) {
+// 			$team_members_result = Helper::get_team_members_by_ids( $team_member_ids );
+//
+// 			if ( $team_members_result['error'] ) {
+// 				wp_send_json_error( array( 'message' => $team_members_result['message'] ) );
+// 				return;
+// 			}
+//
+// 			$team_members = $team_members_result['team_members'];
+// 		} else {
+// 			$team_members = array();
+// 		}
 
 		$showcase = array(
 			'post_id'   => $post_id,
 			'title'     => get_the_title( $post_id ),
 			'content'   => get_the_content(),
-			'meta_data' => array(
-				'team_members'      => $team_members,
-				'showcase_settings' => ! empty( $showcase_settings ) ? $showcase_settings : Common::get_default_showcase_settings(),
-			),
+// 			'meta_data' => array(
+// 				'team_members'      => $team_members,
+// 				'showcase_settings' => ! empty( $showcase_settings ) ? $showcase_settings : Common::get_default_showcase_settings(),
+// 			),
 		);
 
 		wp_reset_postdata();
@@ -116,7 +116,7 @@ class ProductShowcase {
 	}
 
 	public function create_showcase() {
-		check_ajax_referer( 'tsteam_nonce' );
+		check_ajax_referer( 'tsproduct_nonce' );
 
 		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_die();
@@ -130,7 +130,7 @@ class ProductShowcase {
 			'post_title'  => $showcase_title,
 			'post_status' => 'publish',
 			'post_author' => get_current_user_id(),
-			'post_type'   => 'tsteam-showcase',
+			'post_type'   => 'ts-product-showcase',
 		);
 
 		$is_post = wp_insert_post( $args );
@@ -146,7 +146,7 @@ class ProductShowcase {
 	}
 
 	public function update_showcase() {
-		check_ajax_referer( 'tsteam_nonce' );
+		check_ajax_referer( 'tsproduct_nonce' );
 
 		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_die();
@@ -174,7 +174,7 @@ class ProductShowcase {
 	}
 
 	public function update_showcase_settings() {
-		check_ajax_referer( 'tsteam_nonce' );
+		check_ajax_referer( 'tsproduct_nonce' );
 		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_die();
 		}
@@ -200,7 +200,7 @@ class ProductShowcase {
 	}
 
     public function duplicate_showcase() {
-        check_ajax_referer( 'tsteam_nonce' );
+        check_ajax_referer( 'tsproduct_nonce' );
 
         if ( ! current_user_can( 'manage_options' ) ) {
             wp_die();
@@ -259,7 +259,7 @@ class ProductShowcase {
     }
 
 	public function delete_showcase() {
-		check_ajax_referer( 'tsteam_nonce' );
+		check_ajax_referer( 'tsproduct_nonce' );
 		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_die();
 		}

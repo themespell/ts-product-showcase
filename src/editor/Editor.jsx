@@ -46,7 +46,7 @@ function Editor() {
     saveSettings('postType', postTypeFromUrl);
 
     if (postIdFromUrl) {
-      fetchData(`tsteam/${postTypeFromUrl}/fetch/single`, (response) => {
+      fetchData(`tsproduct/${postTypeFromUrl}/fetch/single`, (response) => {
         if (response && response.success) {
           setPostData(response.data.meta_data);
 

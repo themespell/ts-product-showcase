@@ -5,7 +5,6 @@ import { ConfigProvider } from 'antd';
 import globalSettings from './common/utils/globalSettings.js';
 import Editor from './editor/Editor.jsx';
 import AdminPanel from './admin/Admin.jsx';
-import Navigation from './admin/components/Navigation.jsx';
 
 import {menuOverride} from "./common/utils/menuOverride.js";
 
@@ -29,7 +28,3 @@ const RootComponent = () => {
 ReactDOM.createRoot(document.getElementById('ts-product-showcase')).render(
   <RootComponent />
 );
-
-// ReactDOM.createRoot(document.getElementById('toplevel_page_tsteam-admin')).render(
-//   <Navigation />
-// );
