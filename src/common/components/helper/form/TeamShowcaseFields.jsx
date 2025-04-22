@@ -13,6 +13,7 @@ function TeamShowcaseFields({ form, post_id }) {
   useEffect(() => {
     fetchData('tsproduct/products/fetch', (response) => {
       if (response.success && response.data) {
+        console.log(response.data);
         const options = response.data.map((member) => ({
           label: member.name,
           value: member.post_id,
