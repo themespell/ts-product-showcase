@@ -44,17 +44,17 @@ const Card = ({
           <hr className="tscard__separator"></hr>
 
 
-          {description && (
-            <TsMemberDescription> {description} </TsMemberDescription>
-          )}
+          {/*{description && (*/}
+          {/*  <TsMemberDescription> {description} </TsMemberDescription>*/}
+          {/*)}*/}
 
-          {details && (
-            <div className="mt-2 flex items-center justify-center">
-              {details}
-            </div>
-          )}
+          {/*{details && (*/}
+          {/*  <div className="mt-2 flex items-center justify-center">*/}
+          {/*    {details}*/}
+          {/*  </div>*/}
+          {/*)}*/}
 
-          <SocialIcons socialIcons={socialIcons} settings={settings} />
+          {/*<SocialIcons socialIcons={socialIcons} settings={settings} />*/}
         </div>
       </div>
     </div>
