@@ -85,30 +85,30 @@ class ProductShowcase {
 		$post_id = get_the_ID();
 
 		// Get the team member IDs stored as meta data
-// 		$team_member_ids   = get_post_meta( $post_id, 'tsteam_team_members', true );
-// 		$showcase_settings = get_post_meta( $post_id, 'tsteam_showcase_settings', true );
-//
-// 		if ( ! empty( $team_member_ids ) && is_array( $team_member_ids ) ) {
-// 			$team_members_result = Helper::get_team_members_by_ids( $team_member_ids );
-//
-// 			if ( $team_members_result['error'] ) {
-// 				wp_send_json_error( array( 'message' => $team_members_result['message'] ) );
-// 				return;
-// 			}
-//
-// 			$team_members = $team_members_result['team_members'];
-// 		} else {
-// 			$team_members = array();
-// 		}
+        $product_ids   = get_post_meta( $post_id, 'tsproduct_products', true );
+		$showcase_settings = get_post_meta( $post_id, 'tsproduct_showcase_settings', true );
+
+		if ( ! empty( $product_ids ) && is_array( $product_ids ) ) {
+			$products_result = Helper::get_products_by_ids( $product_ids );
+
+			if ( $products_result['error'] ) {
+				wp_send_json_error( array( 'message' => $products_result['message'] ) );
+				return;
+			}
+
+			$products = $products_result['products'];
+		} else {
+			$products = array();
+		}
 
 		$showcase = array(
 			'post_id'   => $post_id,
 			'title'     => get_the_title( $post_id ),
 			'content'   => get_the_content(),
-// 			'meta_data' => array(
-// 				'team_members'      => $team_members,
-// 				'showcase_settings' => ! empty( $showcase_settings ) ? $showcase_settings : Common::get_default_showcase_settings(),
-// 			),
+			'meta_data' => array(
+				'products'      => $products,
+				'showcase_settings' => ! empty( $showcase_settings ) ? $showcase_settings : Common::get_default_showcase_settings(),
+			),
 		);
 
 		wp_reset_postdata();
@@ -123,7 +123,7 @@ class ProductShowcase {
 		}
 
 		$showcase_title    = isset( $_POST['title'] ) ? sanitize_text_field( wp_unslash( $_POST['title'] ) ) : '';
-		$team_members      = isset( $_POST['team_members'] ) ? array_map( 'intval', (array) $_POST['team_members'] ) : array();
+		$products      = isset( $_POST['products'] ) ? array_map( 'intval', (array) $_POST['products'] ) : array();
 		$showcase_settings = isset( $_POST['data'] ) ? wp_json_encode( wp_unslash( $_POST['data'] ), true ) : array();
 
 		$args = array(
@@ -140,8 +140,8 @@ class ProductShowcase {
 			return;
 		}
 
-		update_post_meta( $is_post, 'tsteam_team_members', $team_members );
-		update_post_meta( $is_post, 'tsteam_showcase_settings', $showcase_settings );
+		update_post_meta( $is_post, 'tsproduct_products', $products );
+		update_post_meta( $is_post, 'tsproduct_showcase_settings', $showcase_settings );
 		wp_send_json_success( array( 'post_id' => $is_post ) );
 	}
 
