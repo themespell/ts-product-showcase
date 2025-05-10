@@ -6,7 +6,7 @@ import {getTranslations} from "../../../utils/translations.js";
 
 function TeamShowcaseFields({ form, post_id }) {
   const translations = getTranslations();
-  const [teamMembers, setTeamMembers] = useState([]);
+  const [products, setProducts] = useState([]);
   // const [form] = Form.useForm(); // Create form instance
 
   // Fetch team members for select options
@@ -18,7 +18,7 @@ function TeamShowcaseFields({ form, post_id }) {
           label: member.name,
           value: member.post_id,
         }));
-        setTeamMembers(options);
+        setProducts(options);
       } else {
         console.error('Failed to fetch Products.');
       }
@@ -32,7 +32,7 @@ function TeamShowcaseFields({ form, post_id }) {
         if (response.success && response.data) {
           form.setFieldsValue({
             title: response.data.title,
-            team_members: response.data.meta_data.team_members.map((member) => ({
+            products: response.data.meta_data.products.map((member) => ({
               label: member.name,
               value: member.post_id,
             }))
@@ -53,13 +53,13 @@ function TeamShowcaseFields({ form, post_id }) {
       />
 
       <Form.Item
-        name="team_members"
-        rules={[{ required: true, message: 'Please select team members'}]}
+        name="products"
+        rules={[{ required: true, message: 'Please select products'}]}
       >
         <TsSelect
           label={translations.teamMember}
-          defaultValue={form.getFieldValue('team_members')}
-          options={teamMembers}
+          defaultValue={form.getFieldValue('products')}
+          options={products}
           mode="multiple"
         />
       </Form.Item>
