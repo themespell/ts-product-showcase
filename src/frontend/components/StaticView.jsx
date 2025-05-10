@@ -86,12 +86,12 @@ function StaticView({ team_members, settings, viewport, isEditor }) {
                 settings={settings}
                 layoutType={settings.selectedLayout.value}
                 id={member.post_id}
-                imageUrl={member.meta_data.image}
+                imageUrl={member.image_url}
                 title={member.title}
-                subtitle={member.meta_data.designation}
-                description={member.meta_data.description}
-                socialIcons={member.meta_data.socialLinks || []}
-                details={<Details settings={settings} member={member} />}
+                subtitle={member.price}
+                // description={member.meta_data.description}
+                // socialIcons={member.meta_data.socialLinks || []}
+                // details={<Details settings={settings} member={member} />}
                 animationConfig={animationConfig}
               />
             )}
