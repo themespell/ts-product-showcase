@@ -1,5 +1,5 @@
 <?php
-namespace TSTeam;
+namespace TSProduct;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -7,56 +7,83 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Helper {
 
-	public static function get_team_members_by_ids( $team_member_ids ) {
-		$team_member_ids = is_array( $team_member_ids ) ? array_map( 'intval', $team_member_ids ) : array();
+    public static function get_products_by_ids( $product_ids ) {
+        $product_ids = is_array( $product_ids ) ? array_map( 'intval', $product_ids ) : array();
 
-		if ( empty( $team_member_ids ) ) {
-			return array(
-				'error'   => true,
-				'message' => 'No team member IDs provided',
-			);
-		}
+        if ( empty( $product_ids ) ) {
+            return array(
+                'error'   => true,
+                'message' => 'No product IDs provided',
+            );
+        }
 
-		$args = array(
-			'post_type'      => 'tsteam-member',
-			'post__in'       => $team_member_ids,
-			'posts_per_page' => -1,
-			'orderby'        => 'ID',
-			'order'          => 'ASC',
-		);
+        $args = array(
+            'post_type'      => 'product',
+            'post__in'       => $product_ids,
+            'posts_per_page' => -1,
+            'orderby'        => 'ID',
+            'order'          => 'ASC',
+        );
 
-		$query = new \WP_Query( $args );
+        $query = new \WP_Query( $args );
 
-		if ( ! $query->have_posts() ) {
-			return array(
-				'error'   => true,
-				'message' => 'No team members found',
-			);
-		}
+        if ( ! $query->have_posts() ) {
+            return array(
+                'error'   => true,
+                'message' => 'No products found',
+            );
+        }
 
-		$team_members = array();
+        $products = array();
 
-		while ( $query->have_posts() ) {
-			$query->the_post();
-			$post_id           = get_the_ID();
+        while ( $query->have_posts() ) {
+            $query->the_post();
+            $post_id = get_the_ID();
 
-			$member_meta        = get_post_meta( $post_id, 'tsteam_member_info', true );
+            // Get WooCommerce product object
+            $product = wc_get_product( $post_id );
 
-			$team_members[] = array(
-				'post_id'           => $post_id,
-				'title'             => get_the_title(),
-				'content'           => get_the_content(),
-				'meta_data' => $member_meta,
-			);
-		}
+            if ( ! $product ) {
+                continue;
+            }
 
-		wp_reset_postdata();
+            // Get image URL instead of ID
+            $image_url = wp_get_attachment_url( $product->get_image_id() );
 
-		return array(
-			'error'        => false,
-			'team_members' => $team_members,
-		);
-	}
+            // Get gallery image URLs instead of IDs
+            $gallery_urls = array();
+            $gallery_ids = $product->get_gallery_image_ids();
+            if ( ! empty( $gallery_ids ) ) {
+                foreach ( $gallery_ids as $gallery_id ) {
+                    $gallery_url = wp_get_attachment_url( $gallery_id );
+                    if ( $gallery_url ) {
+                        $gallery_urls[] = $gallery_url;
+                    }
+                }
+            }
+
+            $products[] = array(
+                'post_id'     => $post_id,
+                'title'       => get_the_title(),
+                'content'     => get_the_content(),
+                'price'       => $product->get_price(),
+                'regular_price' => $product->get_regular_price(),
+                'sale_price'  => $product->get_sale_price(),
+                'sku'         => $product->get_sku(),
+                'stock_status' => $product->get_stock_status(),
+                'image_url'   => $image_url,  // Changed from image_id to image_url
+                'gallery_urls' => $gallery_urls,  // Changed from gallery_ids to gallery_urls
+                'categories'  => wp_get_post_terms( $post_id, 'product_cat', array( 'fields' => 'names' ) ),
+            );
+        }
+
+        wp_reset_postdata();
+
+        return array(
+            'error'    => false,
+            'products' => $products,
+        );
+    }
 
 	public static function team_member_fields($actiontype) {
 		$post_data = ($actiontype === 'update') ? $_POST['data'] : $_POST;
