@@ -106,7 +106,7 @@ function Editor() {
             >
               {allSettings.selectedView.value === "flex" ? (
                       <FlexView
-                          team_members={postData.team_members}
+                          team_members={postData.products}
                           settings={allSettings}
                           viewport={viewport}
                           isEditor={isEditor}
@@ -141,7 +141,7 @@ function Editor() {
                   />
               ) : (
                   <StaticView
-                      team_members={postData.team_members}
+                      team_members={postData.products}
                       settings={allSettings}
                       viewport={viewport}
                       isEditor={isEditor}
