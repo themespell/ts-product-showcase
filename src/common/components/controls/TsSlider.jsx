@@ -114,14 +114,14 @@ function TsSlider({ label, name, range, unit, responsive, onChange }) {
                         onChange={handleChange}
                         styles={{
                             track: {
-                                background: 'linear-gradient(90deg, rgb(117, 71, 215) 18.75%, rgb(161, 70, 219) 92.5%)',
+                                background: 'linear-gradient(135deg, #FB0 -1.63%, #FF1E4F 99.59%);',
                                 height: '4px',
                             },
                             rail: {
-                                backgroundColor: '#7537D7',
+                                backgroundColor: '#FE4F0A',
                             },
                             handle: {
-                                borderColor: '#7537D7',
+                                borderColor: '#FE4F0A',
                             },
                             width: '100%',
                         }}

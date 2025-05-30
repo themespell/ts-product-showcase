@@ -8,7 +8,7 @@
 .editor-container,
 .main-content {
 	scrollbar-width: thin;
-	scrollbar-color: #703FD6 transparent;
+	scrollbar-color: #FE4F0A transparent;
 	overflow: auto;
 }
 
@@ -25,7 +25,7 @@
 .viewport-mobile::-webkit-scrollbar-thumb,
 .editor-container::-webkit-scrollbar-thumb,
 .main-content::-webkit-scrollbar-thumb {
-	background: #703FD6;
+	background: #FE4F0A;
 	border-radius: 2px;
 	opacity: 0;
 	transition: opacity 0.7s ease-in-out;
@@ -55,7 +55,7 @@
 .viewport-mobile:hover,
 .editor-container:hover,
 .main-content:hover {
-	scrollbar-color: #703FD6 transparent;
+	scrollbar-color: #FE4F0A transparent;
 }
 
 
@@ -77,11 +77,11 @@
 
 .tsteam__editor-topbar {
 	color: #fff;
-	background: #703FD6;
+	background: #FE4F0A;
 }
 
 .tsteam__editor-button {
-	color: #703FD6;
+	color: #FE4F0A;
 	background-color: #ffffff;
 	font-weight: 700;
 }
@@ -209,7 +209,7 @@
 /*Topbar Styles*/
 
 .responsive-button-secondary {
-	background-color: #703FD6;
+	background-color: #FE4F0A;
 	color: #fff;
 	border: none !important;
 }
@@ -222,8 +222,8 @@
 
 .responsive-button-primary {
 	background-color: #fff;
-	color: #703FD6;
-	border: 1px solid #703FD6;
+	color: #FE4F0A;
+	border: 1px solid #FE4F0A;
 	border-radius: 10px;
 }
 

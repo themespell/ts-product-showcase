@@ -6,13 +6,13 @@ const translations = getTranslations();
 
 const globalSettings = {
     token: {
-        colorPrimary: '#703FD6',
+        colorPrimary: '#FE4F0A',
         colorBgContainer: '#fff',
         colorText: '#000000',
     },
     components: {
       Table: {
-        "headerBg": "#F3EAFB",
+        "headerBg": "#FFEDE6",
         "headerColor": "#111C5C",
         "headerBorderRadius": 15,
         "borderRadius": 15,
@@ -26,14 +26,14 @@ const globalSettings = {
       },
     },
     theme: {
-      primaryColor: '#703FD6',
+      primaryColor: '#FE4F0A',
       textColor: '#333',
       borderColor: '#ededed',
       borderColorLight: '#DFD5F6'
     },
     navigation: {
       dashboard:{
-        link: '?page=tsteam-showcase&path=dashboard',
+        link: '?page=ts-product-showcase&path=dashboard',
         label: 'Dashboard',
         icon: ''
       },
@@ -79,7 +79,7 @@ const globalSettings = {
                 label: translations.getPro,
             }
         }),
-      version: '1.0.3',
+      version: '0.0.1',
     }
   };
   

@@ -11,7 +11,7 @@ function Topbar({ title }) {
                 {/* Left Section: Logo and Navigation */}
                 <div className="flex items-center space-x-8">
                     {/* Ts Team Logo */}
-                    <img src={`${tsteamLogo}/img/tsteam_icon.svg`} className="tsteam__topbar-logo w-10 h-10"/>
+                    {/*<img src={`${tsteamLogo}/img/tsteam_icon.svg`} className="tsteam__topbar-logo w-10 h-10"/>*/}
 
                     {/* Navigation Links */}
                     <div className="flex space-x-4 gap-4 tsteam__topbar-nav mt-2">

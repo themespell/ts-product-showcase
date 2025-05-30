@@ -23,10 +23,10 @@ class Products {
 	// Team Member Ajax
 
 	public function get_team_members() {
-// 		check_ajax_referer( 'tsproduct_nonce' );
-// 		if ( ! current_user_can( 'manage_options' ) ) {
-// 			wp_die();
-// 		}
+		check_ajax_referer( 'tsproduct_nonce' );
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die();
+		}
 
 		$args = array(
 			'post_type' => 'product',
