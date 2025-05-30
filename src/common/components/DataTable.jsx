@@ -154,7 +154,7 @@ function DataTable({ type, title, editor }) {
     };
 
     const confirmDelete = () => {
-        deleteData(`tsteam/${type}/delete`, deleteId)
+        deleteData(`tsproduct/${type}/delete`, deleteId)
             .then((response) => {
                 if (response.success) {
                     toastNotification('success', `${title} Deleted`, `The ${title} has been successfully deleted.`);
@@ -170,7 +170,7 @@ function DataTable({ type, title, editor }) {
     };
 
     const handleDuplicate = (post_id) => {
-        duplicateData(`tsteam/${type}/duplicate`, post_id)
+        duplicateData(`tsproduct/${type}/duplicate`, post_id)
             .then((response) => {
                 if (response.success) {
                     toastNotification('success', `${title} Duplicated`, `The ${title} has been successfully duplicated.`);
