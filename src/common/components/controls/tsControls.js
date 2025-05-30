@@ -1,6 +1,7 @@
 export { default as TsInput } from './TsInput';
 export { default as TsButton } from './TsButton';
 export { default as TsSelect } from './TsSelect';
+export { default as TsAdvanceSelect } from './TsAdvanceSelect';
 export { default as TsSlider } from './TsSlider';
 export { default as TsColor } from './TsColor';
 export { default as TsDivider } from './TsDivider';
