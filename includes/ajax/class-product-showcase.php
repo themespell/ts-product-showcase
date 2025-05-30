@@ -159,16 +159,17 @@ class ProductShowcase {
 		}
 
 		$showcase_title = ( isset( $_POST['data']['title'] ) ? sanitize_text_field( wp_unslash( $_POST['data']['title'] ) ) : '' );
-		$team_members   = isset( $_POST['data']['team_members'] ) ? array_map( 'intval', (array) $_POST['data']['team_members'] ) : array();
+		$products   = isset( $_POST['data']['products'] ) ? array_map( 'intval', (array) $_POST['data']['products'] ) : array();
 
-		$args    = array(
-			'ID'         => $post_id,
-			'post_type'  => 'tsteam-showcase',
-			'post_title' => $showcase_title,
-			'meta_input' => array(
-				'tsteam_team_members' => $team_members,
-			),
-		);
+		$args = array(
+		    'ID'         => $post_id,
+        	'post_title'  => $showcase_title,
+        	'post_type'   => 'ts-product-showcase',
+        	'meta_input' => array(
+            	'tsproduct_products' => $products,
+            ),
+        );
+
 		$is_post = wp_update_post( $args );
 		wp_send_json_success( array( 'post_id' => $is_post ) );
 	}
@@ -184,7 +185,7 @@ class ProductShowcase {
 
 		$args = array(
 			'ID'        => $post_id,
-			'post_type' => 'tsteam-showcase',
+        	'post_type'   => 'ts-product-showcase',
 		);
 
 		$is_post = wp_update_post( $args, true );
@@ -195,7 +196,7 @@ class ProductShowcase {
 			return;
 		}
 
-		update_post_meta( $post_id, 'tsteam_showcase_settings', $showcase_settings );
+		update_post_meta( $post_id, 'tsproduct_showcase_settings', $showcase_settings );
 		wp_send_json_success( array( 'post_id' => $post_id ) );
 	}
 
@@ -217,14 +218,14 @@ class ProductShowcase {
             // Get original post data
             $post = get_post( $post_id );
 
-            if ( ! $post || $post->post_type !== 'tsteam-showcase' ) {
+            if ( ! $post || $post->post_type !== 'ts-product-showcase' ) {
                 wp_send_json_error( array( 'message' => 'Showcase not found' ) );
                 return;
             }
 
             // Get the team member IDs and showcase settings stored as meta data
-            $team_member_ids = get_post_meta( $post_id, 'tsteam_team_members', true );
-            $showcase_settings = get_post_meta( $post_id, 'tsteam_showcase_settings', true );
+            $product_ids = get_post_meta( $post_id, 'tsproduct_products', true );
+            $showcase_settings = get_post_meta( $post_id, 'tsproduct_showcase_settings', true );
 
             // Create new post args
             $args = array(
@@ -232,7 +233,7 @@ class ProductShowcase {
                 'post_content' => $post->post_content,
                 'post_status'  => 'publish',
                 'post_author'  => get_current_user_id(),
-                'post_type'    => 'tsteam-showcase',
+                'post_type'    => 'ts-product-showcase',
             );
 
             // Insert the new post
@@ -244,8 +245,8 @@ class ProductShowcase {
             }
 
             // Copy over the meta data
-            update_post_meta( $new_post_id, 'tsteam_team_members', $team_member_ids );
-            update_post_meta( $new_post_id, 'tsteam_showcase_settings', $showcase_settings );
+            update_post_meta( $new_post_id, 'tsproduct_products', $product_ids );
+            update_post_meta( $new_post_id, 'tsproduct_showcase_settings', $showcase_settings );
 
             wp_send_json_success(
                 array(
