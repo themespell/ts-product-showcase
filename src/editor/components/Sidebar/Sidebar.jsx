@@ -53,13 +53,13 @@ function Sidebar({ isOpen, selectedLayout, layoutType, onToggleSidebar }) {
                         <p className="text-xs mt-1">{translations.font}</p>
                     </div>
 
-                    <div className="flex flex-col justify-center items-center"
-                         onClick={() => setActiveTab("4")}>
-                        <button className={`sidebar-button ${activeTab === "4" ? "active" : ""}`}>
-                            <Facebook size={22}/> {/* Icon for Social */}
-                        </button>
-                        <p className="text-xs mt-1">{translations.social}</p>
-                    </div>
+                    {/*<div className="flex flex-col justify-center items-center"*/}
+                    {/*     onClick={() => setActiveTab("4")}>*/}
+                    {/*    <button className={`sidebar-button ${activeTab === "4" ? "active" : ""}`}>*/}
+                    {/*        <Facebook size={22}/> /!* Icon for Social *!/*/}
+                    {/*    </button>*/}
+                    {/*    <p className="text-xs mt-1">{translations.social}</p>*/}
+                    {/*</div>*/}
 
                     <div className="flex flex-col justify-center items-center"
                          onClick={() => setActiveTab("5")}>

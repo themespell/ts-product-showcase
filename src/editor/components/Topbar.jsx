@@ -24,12 +24,12 @@ function Topbar({ type, onCopySettings, onPasteSettings}) {
     };
 
     const handlePublishClick = () => {
-        const action = `tsteam/${type}/update/settings`;
+        const action = `tsproduct/${type}/update/settings`;
         editorFunction.getState().updateSettings(action);
     };
 
     const handleBacktoAdmin = () => {
-        const admin_url = `admin.php?page=tsteam-showcase`;
+        const admin_url = `admin.php?page=ts-product-showcase&path=showcase`;
         window.location.href = admin_url;
     };
 
