@@ -10,11 +10,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 class TSTeam_Showcase extends Widget_Base {
 
     public function get_name() {
-        return 'ts_team_showcase';
+        return 'ts_product_showcase';
     }
 
     public function get_title() {
-        return esc_html__( 'TS Team', 'tsteam' );
+        return esc_html__( 'TS Product Showcase', 'ts-product-showcase' );
     }
 
     public function get_icon() {
@@ -22,7 +22,7 @@ class TSTeam_Showcase extends Widget_Base {
     }
 
     public function get_categories() {
-            return ['ts-team-widgets'];
+            return ['ts-product-widgets'];
     }
 
     public function get_keywords() {
@@ -33,7 +33,7 @@ class TSTeam_Showcase extends Widget_Base {
         $this->start_controls_section(
             'section_content',
             [
-                'label' => esc_html__( 'Content', 'tsteam' ),
+                'label' => esc_html__( 'Content', 'ts-product-showcase' ),
             ]
         );
 
@@ -46,16 +46,16 @@ class TSTeam_Showcase extends Widget_Base {
         ]);
 
         // Prepare options
-        $options = ['' => esc_html__('Select a Team Showcase', 'tsteam')];
+        $options = ['' => esc_html__('Select a Team Showcase', 'ts-product-showcase')];
         foreach ( $team_posts as $post ) {
-            $options[$post->ID] = !empty($post->post_title) ? $post->post_title : sprintf(__('#%d (No title)', 'tsteam'), $post->ID);
+            $options[$post->ID] = !empty($post->post_title) ? $post->post_title : sprintf(__('#%d (No title)', 'ts-product-showcase'), $post->ID);
         }
 
         // Team post selector
         $this->add_control(
             'team_id',
             [
-                'label' => esc_html__( 'Select Team Showcase', 'ts-team-member' ),
+                'label' => esc_html__( 'Select Team Showcase', 'ts-product-showcase' ),
                 'type' => Controls_Manager::SELECT,
                 'options' => $options,
                 'default' => '',
@@ -71,7 +71,7 @@ class TSTeam_Showcase extends Widget_Base {
 
         if ( empty( $settings['team_id'] ) ) {
             echo '<div class="tsteam-placeholder">';
-            echo esc_html__( 'Please select a team showcase to display', 'tsteam' );
+            echo esc_html__( 'Please select a team showcase to display', 'ts-product-showcase' );
             echo '</div>';
             return;
         }

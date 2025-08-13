@@ -28,8 +28,8 @@ class Admin {
 
 		add_submenu_page(
         	$parent,
-        	__( 'Dashboard', 'ts-team-member' ),
-        	__( 'Dashboard', 'ts-team-member' ),
+        	__( 'Dashboard', 'ts-product-showcase' ),
+        	__( 'Dashboard', 'ts-product-showcase' ),
         	'manage_options',
         	'ts-product-showcase&path=dashboard',
         	array( $this, 'tsproduct_callback' ),
@@ -37,16 +37,16 @@ class Admin {
 
 		add_submenu_page(
 			$parent,
-			__( 'Product Showcase', 'ts-team-member' ),
-			__( 'Product Showcase', 'ts-team-member' ),
+			__( 'Product Showcase', 'ts-product-showcase' ),
+			__( 'Product Showcase', 'ts-product-showcase' ),
 			'manage_options',
 			'ts-product-showcase&path=showcase',
 			array( $this, 'tsproduct_callback' ),
 		);
 		add_submenu_page(
         	$parent,
-        	__( 'Tools', 'ts-team-member' ),
-        	__( 'Tools', 'ts-team-member' ),
+        	__( 'Tools', 'ts-product-showcase' ),
+        	__( 'Tools', 'ts-product-showcase' ),
         	'manage_options',
         	'tsteam-showcase&path=tools',
         	array( $this, 'tsproduct_callback' ),

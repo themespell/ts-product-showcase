@@ -1,5 +1,5 @@
 <?php
-namespace TSTeam;
+namespace TSProduct;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
