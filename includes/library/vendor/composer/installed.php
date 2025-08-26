@@ -3,7 +3,7 @@
         'name' => 'themespell/tsteam',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '230491e29ac181b4ca7f2836b248475e02c22960',
+        'reference' => '81ff8587d9b9442616e6ce6e9c1fb4da4921eb43',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'freemius/wordpress-sdk' => array(
-            'pretty_version' => '2.9.0',
-            'version' => '2.9.0.0',
-            'reference' => '56696717c5f0b7fb395618e88e1b592d1893e5dc',
+            'pretty_version' => '2.12.1',
+            'version' => '2.12.1.0',
+            'reference' => 'fedeba08eb3e62af5f84bd6d602f98636467cffc',
             'type' => 'library',
             'install_path' => __DIR__ . '/../freemius/wordpress-sdk',
             'aliases' => array(),
@@ -22,7 +22,7 @@
         'themespell/tsteam' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '230491e29ac181b4ca7f2836b248475e02c22960',
+            'reference' => '81ff8587d9b9442616e6ce6e9c1fb4da4921eb43',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -70,7 +70,9 @@ class Database {
 			array(
 				'methods'             => \WP_REST_Server::READABLE,
 				'callback'            => array( $this, 'get_team_data' ),
-				'permission_callback' => '__return_true',
+				'permission_callback' => function() {
+                    return current_user_can( 'manage_options' );
+                }
 			)
 		);
 	}

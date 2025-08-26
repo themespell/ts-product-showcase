@@ -3,13 +3,13 @@
 	/**
 	 *
 	 * @link              https://themespell.com/
-	 * @since             1.0.3
-	 * @package           WooCommerce Product Showcase Plugin
+	 * @since             0.0.1
+	 * @package           Showcase Product Beautifully
 	 *
 	 * @wordpress-plugin
 	 * Plugin Name:       TS Product Showcase
-	 * Plugin URI:        https://themespell.com/ts-team
-	 * Description:       WooCommerce Product Showcase Plugin
+	 * Plugin URI:        https://themespell.com/ts-product-showcase
+	 * Description:       Showcase Product Beautifully
 	 * Version:           0.0.1
 	 * Author:            Themespell
 	 * Author URI:        https://themespell.com/
@@ -59,7 +59,6 @@ final class TSPRODUCT {
 	}
 
 	public function init_plugin() {
-		$this->load_textdomain();
 		//$this->init_freemius();
 		$this->dispatch_hooks();
 	}
@@ -72,14 +71,6 @@ final class TSPRODUCT {
 		TSProduct\Enqueue::init();
 		TSProduct\Frontend::init();
 		//TSProduct\Addons::init();
-	}
-
-	public function load_textdomain() {
-		load_plugin_textdomain(
-			'ts-product-showcase',
-			false,
-			dirname( plugin_basename( __FILE__ ) ) . '/languages/'
-		);
 	}
 
 	public function load_dependency() {
@@ -115,6 +106,7 @@ final class TSPRODUCT {
                             'type'                => 'plugin',
                             'public_key'          => 'pk_cb7074e85c7a5734ac990c844add0',
                             'is_premium'          => false,
+                            'is_org_compliant'    => true,
                             'premium_suffix'      => 'Personal',
                             'has_addons'          => false,
                             'has_paid_plans'      => false,
