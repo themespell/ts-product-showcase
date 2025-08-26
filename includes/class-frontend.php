@@ -27,7 +27,7 @@ class Frontend {
 		}
 
 			wp_enqueue_style( 'tsproduct-frontend-css', TSPRODUCT_ROOT_DIR_URL . 'includes/assets/frontend/frontend.css' );
-			wp_enqueue_script( 'tsproduct-frontend-script', TSPRODUCT_ROOT_DIR_URL . 'includes/assets/frontend/frontend.js', $dependency, '1.0.0', true );
+			wp_enqueue_script( 'tsproduct-frontend-script', TSPRODUCT_ROOT_DIR_URL . 'includes/assets/frontend/frontend.js', $dependency, '1.0.1', true );
 			wp_localize_script(
 				'tsproduct-frontend-script',
 				'tsproduct_settings',
