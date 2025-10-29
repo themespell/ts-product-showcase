@@ -28,7 +28,7 @@ class Enqueue {
 		if ( $screen_info ) {
 			wp_enqueue_media();
 			wp_enqueue_style( 'tsproduct-admin-css', TSPRODUCT_ROOT_DIR_URL . 'includes/assets/admin/admin.css' );
-			wp_enqueue_script( 'tsproduct-admin-script', TSPRODUCT_ROOT_DIR_URL . 'includes/assets/admin/admin.js', $dependency, '1.0.1', true );
+			wp_enqueue_script( 'tsproduct-admin-script', TSPRODUCT_ROOT_DIR_URL . 'includes/assets/admin/admin.js', $dependency, '1.0.2', true );
 			wp_set_script_translations('tsproduct-admin-script', 'ts-product-showcase', plugin_dir_path(__FILE__)  . 'languages');
 
 			wp_localize_script(

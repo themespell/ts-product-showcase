@@ -4,7 +4,7 @@ Tags: product showcase
 Requires at least: 5.5
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 0.0.3
+Stable tag: 0.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,8 +79,14 @@ Simply use the `[ts_product_showcase id={your-id}]` shortcode on any page, post,
 
 Yes, the plugin includes a live editing feature, allowing you to see real-time changes as you customize your product showcase.
 
+= Where can I find the source code? =
+
+The plugin is open source and available on GitHub at [https://github.com/themespell/ts-product-showcase](https://github.com/themespell/ts-product-showcase).
+
 == Changelog ==
 
+= 0.0.4 =
+* Readme Updated
 
 = 0.0.3 =
 * Fixed Version Mismatched Issue
