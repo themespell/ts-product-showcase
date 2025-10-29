@@ -4,7 +4,7 @@ Tags: product showcase
 Requires at least: 5.5
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 0.0.4
+Stable tag: 0.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -84,6 +84,9 @@ Yes, the plugin includes a live editing feature, allowing you to see real-time c
 The plugin is open source and available on GitHub at [https://github.com/themespell/ts-product-showcase](https://github.com/themespell/ts-product-showcase).
 
 == Changelog ==
+
+= 0.0.5=
+* Added Core Repo to Readme
 
 = 0.0.4 =
 * Readme Updated

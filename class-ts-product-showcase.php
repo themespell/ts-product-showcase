@@ -3,14 +3,14 @@
 	/**
 	 *
 	 * @link              https://themespell.com/
-	 * @since             0.0.4
+	 * @since             0.0.5
 	 * @package           Showcase Product Beautifully
 	 *
 	 * @wordpress-plugin
 	 * Plugin Name:       TS Product Showcase
 	 * Plugin URI:        https://themespell.com/ts-product-showcase
 	 * Description:       Showcase Product Beautifully
-	 * Version:           0.0.4
+	 * Version:           0.0.5
 	 * Author:            Themespell
 	 * Author URI:        https://themespell.com/
 	 * License:           GPL-2.0+
@@ -45,7 +45,7 @@ final class TSPRODUCT {
 	}
 
 	public function define_constants() {
-		define( 'TSPRODUCT_VERSION', '0.0.4' );
+		define( 'TSPRODUCT_VERSION', '0.0.5' );
 		define( 'TSPRODUCT_PLUGIN_FILE', __FILE__ );
 		define( 'TSPRODUCT_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 		define( 'TSPRODUCT_ROOT_DIR_PATH', plugin_dir_path( __FILE__ ) );
