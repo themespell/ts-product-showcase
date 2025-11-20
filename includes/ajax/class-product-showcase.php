@@ -124,7 +124,7 @@ class ProductShowcase {
 
 		$showcase_title    = isset( $_POST['title'] ) ? sanitize_text_field( wp_unslash( $_POST['title'] ) ) : '';
 		$products      = isset( $_POST['products'] ) ? array_map( 'intval', (array) $_POST['products'] ) : array();
-		$showcase_settings = isset( $_POST['data'] ) ? wp_json_encode( wp_unslash( $_POST['data'] ), true ) : array();
+		$showcase_settings = isset($_POST['data']) ? array_map(function($item) { return is_array($item) ? $item : sanitize_text_field($item); }, wp_unslash($_POST['data'])) : array();
 
 		$args = array(
 			'post_title'  => $showcase_title,
@@ -181,7 +181,7 @@ class ProductShowcase {
 		}
 
 		$post_id           = isset( $_POST['post_id'] ) ? absint( $_POST['post_id'] ) : 0;
-		$showcase_settings = isset( $_POST['data'] ) ? wp_json_encode( wp_unslash( $_POST['data'] ), true ) : array();
+		$showcase_settings = isset($_POST['data']) ? array_map(function($item) { return is_array($item) ? $item : sanitize_text_field($item); }, wp_unslash($_POST['data'])) : array();
 
 		$args = array(
 			'ID'        => $post_id,
