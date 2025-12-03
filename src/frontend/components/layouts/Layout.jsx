@@ -20,7 +20,6 @@ function Layout({
 
     useEffect(() => {
         if (layoutType) {
-            console.log(layoutType)
             import(`./${layoutType}/Frontend.jsx`)
                 .then((module) => {
                     const LoadedComponent = module.default;

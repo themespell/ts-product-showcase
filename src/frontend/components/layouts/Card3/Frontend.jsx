@@ -39,31 +39,24 @@ const Card = ({
           alt={title}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 ">
-          <div className="relative h-full flex flex-col">
-            <button className="absolute top-3 right-3 py-[10px] px-[26px] bg-gradient-to-r from-[#FFBB00] to-[#E910A1] font-medium text-white rounded-md z-10">
-              {discountPercent}% Off
-            </button>
-
-            <a
-              href={cartUrl}
-              className="mt-auto mb-10 mx-[5%] w-[90%] text-center text-lg font-medium bg-white text-black hover:bg-black hover:text-white transition-all duration-300 py-5 rounded-md"
-            >
-              Add To Cart
-            </a>
-          </div>
-        </div>
       </div>
-      <div>
-        <TsProductName className="text-center text-[22px] font-medium mt-6 mb-3 ">
-          {title}
-        </TsProductName>
-        <div className="flex justify-center items-center gap-4">
-          <div className="font-medium text-lg text-black">${salePrice}</div>
-          <div className="text-[#bcb5b5] text-sm line-through">
-            ${regularPrice}
+      <div className="flex items-center justify-between mt-9">
+        <div className="flex flex-col gap-2 " >
+          <TsProductName className="text-[30px] font-medium  ">
+            {title}
+          </TsProductName>
+          <div className="flex items-center gap-4">
+            <div className="font-medium text-lg text-black">${salePrice}</div>
+            <div className="text-[#bcb5b5] text-sm line-through">
+              ${regularPrice}
+            </div>
           </div>
         </div>
+     
+          <button className=" py-2 px-3 bg-gradient-to-r from-[#FFBB00] to-[#E910A1] font-medium text-white rounded-full">
+            {discountPercent}% Off
+          </button>
+      
       </div>
     </div>
   );
