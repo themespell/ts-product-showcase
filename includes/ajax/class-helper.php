@@ -74,6 +74,7 @@ class Helper {
                 'image_url'   => $image_url,  // Changed from image_id to image_url
                 'gallery_urls' => $gallery_urls,  // Changed from gallery_ids to gallery_urls
                 'categories'  => wp_get_post_terms( $post_id, 'product_cat', array( 'fields' => 'names' ) ),
+                'add_to_cart_url' => home_url( '/?add-to-cart=' . $product->get_id() )
             );
         }
 
