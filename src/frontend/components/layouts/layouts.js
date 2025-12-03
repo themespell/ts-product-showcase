@@ -1,4 +1,4 @@
 // layouts.js
-import * as Card from './Card/Editor.jsx';
-import * as Card3 from './Card3/Editor.jsx';
-export { Card,Card3};
+import * as CardStandard from './CardStandard/Editor.jsx';
+import * as CardBasic from './CardBasic/Editor.jsx';
+export { CardStandard,CardBasic};
