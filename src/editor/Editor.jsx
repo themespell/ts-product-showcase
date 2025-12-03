@@ -24,7 +24,7 @@ import ConfettiView from "../frontend/components/ConfettiView.jsx";
 
 function Editor() {
   const translations = getTranslations();
-  const isPro = tsteam_settings.is_pro;
+  const isPro = tsproduct_settings.is_pro;
   const { isEditor, viewport, setViewport } = editorLocal();
   const { postType } = editorStore();
   const allSettings = editorStore();
@@ -50,7 +50,7 @@ function Editor() {
         if (response && response.success) {
           setPostData(response.data.meta_data);
 
-          const showcaseSettings = JSON.parse(response.data.meta_data.showcase_settings);
+          const showcaseSettings = response.data.meta_data.showcase_settings;
           Object.keys(showcaseSettings).forEach((key) => {
             const value = showcaseSettings[key];
             saveSettings(key, value);

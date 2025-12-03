@@ -1,7 +1,7 @@
 import SocialIcons from "./SocialIcons.jsx";
 import { getAnimationClasses } from "../../helper/motionControl.js";
 
-import TsMemberName from "../__common/components/TsMemberName.jsx";
+import TsProuductName from "../__common/components/TsProuductName.jsx";
 import TsMemberDesignation from "../__common/components/TsMemberDesignation.jsx";
 import TsMemberDescription from "../__common/components/TsMemberDescription.jsx";
 import './style.css';
@@ -36,7 +36,7 @@ const HorizontalCard = ({
           <div className="flex-1">
             <div className="flex justify-between items-start">
               <div>
-                {title && <TsMemberName>{title}</TsMemberName>}
+                {title && <TsProuductName>{title}</TsProuductName>}
                  {subtitle && (
                   <TsMemberDesignation> {subtitle} </TsMemberDesignation>
                 )}

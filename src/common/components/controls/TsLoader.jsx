@@ -1,7 +1,7 @@
 import globalSettings from '../../utils/globalSettings';
 
 function TsLoader({ label }) {
-  const tsteamLogo = tsteam_settings.assets_path;
+  const tsteamLogo = tsproduct_settings.assets_path;
   return (
       <div
           className="flex flex-col justify-center items-center h-screen"

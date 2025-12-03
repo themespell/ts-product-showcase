@@ -30,5 +30,12 @@ export default {
   plugins: [
     require('daisyui'),
   ],
+    daisyui: {
+        styled: false,      // ✅ Disable DaisyUI default styles
+        themes: false,      // ✅ Disable DaisyUI themes
+        base: false,        // ✅ Disable DaisyUI base styles
+        utils: true,        // ✅ Keep utility classes if you need them
+        logs: false,        // Disable logs
+    },
 }
 

@@ -27,7 +27,7 @@ class Frontend {
 		}
 
 			wp_enqueue_style( 'tsproduct-frontend-css', TSPRODUCT_ROOT_DIR_URL . 'includes/assets/frontend/frontend.css' );
-			wp_enqueue_script( 'tsproduct-frontend-script', TSPRODUCT_ROOT_DIR_URL . 'includes/assets/frontend/frontend.js', $dependency, '1.0.2', true );
+			wp_enqueue_script( 'tsproduct-frontend-script', TSPRODUCT_ROOT_DIR_URL . 'includes/assets/frontend/frontend.js', $dependency, '1.0.3', true );
 			wp_localize_script(
 				'tsproduct-frontend-script',
 				'tsproduct_settings',
@@ -43,7 +43,7 @@ class Frontend {
 	}
 
 	public function add_module_type_to_script( $tag, $handle, $src ) {
-		if ( 'tsproduct-member-script' === $handle ) {
+		if ( 'tsproduct-frontend-script' === $handle ) {
 			$tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
 		}
 		return $tag;

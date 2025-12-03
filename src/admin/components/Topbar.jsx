@@ -2,7 +2,7 @@ import { CircleHelp, ArrowUpRight, Bell, UserRound } from 'lucide-react';
 import globalSettings from "../../common/utils/globalSettings";
 
 function Topbar({ title }) {
-    const tsteamLogo = tsteam_settings.assets_path;
+    const tsteamLogo = tsproduct_settings.assets_path;
     const { menuitems, proLink, version } = globalSettings.topbar;
 
     return (

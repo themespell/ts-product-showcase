@@ -1,6 +1,6 @@
 import {getTranslations} from "./translations.js";
 
-const isPro = !!tsteam_settings.is_pro ?? false;
+const isPro = !!tsproduct_settings.is_pro ?? false;
 
 const translations = getTranslations();
 

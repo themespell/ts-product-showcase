@@ -1,84 +1,107 @@
 import React from "react";
-import SocialIcons from "./SocialIcons.jsx";
-// import { getAnimationClasses } from "../../helper/motionControl.js";
-import TsMemberName from "../__common/components/TsMemberName.jsx";
+import TsProductName from "../__common/components/TsProuductName.jsx";
 import TsMemberDesignation from "../__common/components/TsMemberDesignation.jsx";
 import TsMemberDescription from "../__common/components/TsMemberDescription.jsx";
 
 import './style.css';
 
 const Card = ({
-  settings,
-  id,
-  imageUrl,
-  title,
-  subtitle,
-  description,
-  socialIcons,
-  details,
-  animationConfig
-}) => {
+                  settings,
+                  id,
+                  title,
+                  imageUrl,
+                  productGallery,
+                  categories,
+                  price,
+                  regularPrice,
+                  salePrice,
+                  sku,
+                  stockStatus,
+                  description,
+                  cartUrl,
+                  details,
+                  animationConfig
+              }) => {
+    // Calculate discount percentage
+    const calculateDiscount = () => {
+        if (regularPrice && salePrice) {
+            const discount = ((regularPrice - salePrice) / regularPrice) * 100;
+            return Math.round(discount);
+        }
+        return 0;
+    };
 
-  // const animationConfig = getAnimationClasses(settings.hoverAnimation);
-  console.log("Passing animationConfig to Card:", animationConfig);
+    const discountPercent = calculateDiscount();
 
-  const renderContent = () => (
-   <>
-    <div className="w-full flex flex-col items-center">
-      <img
-        id={`${title?.replace(/\s+/g, "-").toLowerCase()}-${id}`}
-        src={imageUrl}
-        alt={title}
-        className={`tsteam-member__image w-32 max-h-[8rem] rounded-xl -mb-12 z-10 relative shadow-2xl object-cover ${
-          details ? "cursor-pointer" : ""
-        }`}
-      />
-      <div
-        className="w-full max-w-sm bg-white rounded-[10px] shadow-[0_2px_8px_rgba(0,0,0,0.1)] overflow-hidden tsteam-card-container "
-      >
-        <div className="px-5 pt-16 pb-5 text-center flex flex-col items-center">
-          {title && <TsMemberName> {title} </TsMemberName>}
+    const renderContent = () => (
+        <div className="w-full flex flex-col">
+            {/* Product Image Container */}
+            <div className="product-image-container">
+                {/* Sale Badge */}
+                {discountPercent > 0 && (
+                    <div className="sale-badge">
+                        {discountPercent}% Off
+                    </div>
+                )}
 
-          {subtitle && <TsMemberDesignation> {subtitle} </TsMemberDesignation>}
+                {/* Product Image */}
+                <img
+                    id={`${title?.replace(/\s+/g, "-").toLowerCase()}-${id}`}
+                    src={imageUrl}
+                    alt={title}
+                />
 
-          <hr className="tscard__separator"></hr>
+                {/* Add to Cart Button */}
+                <button className="add-to-cart-btn">
+                    Add to Cart
+                </button>
+            </div>
 
+            {/* Product Info */}
+            <div className="pt-4 text-center">
+                {title && <TsProductName>{title}</TsProductName>}
 
-          {/*{description && (*/}
-          {/*  <TsMemberDescription> {description} </TsMemberDescription>*/}
-          {/*)}*/}
-
-          {/*{details && (*/}
-          {/*  <div className="mt-2 flex items-center justify-center">*/}
-          {/*    {details}*/}
-          {/*  </div>*/}
-          {/*)}*/}
-
-          {/*<SocialIcons socialIcons={socialIcons} settings={settings} />*/}
+                {/* Price Display */}
+                <div className="flex items-center justify-center gap-2 mt-1">
+                    {salePrice ? (
+                        <>
+              <span className="text-base font-semibold text-gray-800">
+                ${salePrice}
+              </span>
+                            {regularPrice && (
+                                <span className="text-sm text-gray-400 line-through">
+                  ${regularPrice}
+                </span>
+                            )}
+                        </>
+                    ) : (
+                        <span className="text-base font-semibold text-gray-800">
+              ${price}
+            </span>
+                    )}
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-   </>
-  );
-
-  // Handle different animation types
-  if (!animationConfig) {
-    return renderContent();
-  }
-
-  if (animationConfig.type === "single") {
-    return <div className={animationConfig.class}>{renderContent()}</div>;
-  }
-
-  if (animationConfig.type === "wrapper") {
-    return (
-      <div className={animationConfig.parent}>
-        <div className={animationConfig.wrapper}>{renderContent()}</div>
-      </div>
     );
-  }
 
-  return renderContent();
+    // Handle different animation types
+    if (!animationConfig) {
+        return renderContent();
+    }
+
+    if (animationConfig.type === "single") {
+        return <div className={animationConfig.class}>{renderContent()}</div>;
+    }
+
+    if (animationConfig.type === "wrapper") {
+        return (
+            <div className={animationConfig.parent}>
+                <div className={animationConfig.wrapper}>{renderContent()}</div>
+            </div>
+        );
+    }
+
+    return renderContent();
 };
 
 export default Card;

@@ -1,9 +1,9 @@
-const ajax_url = tsteam_settings.ajax_url;
+const ajax_url = tsproduct_settings.ajax_url;
 
 export const updateData = (action, data, post_id) => {
     return new Promise((resolve, reject) => {
         jQuery.post(ajax_url, {
-            _ajax_nonce: tsteam_settings.nonce,
+            _ajax_nonce: tsproduct_settings.nonce,
             action: action,
             post_id: post_id,
             data: { ...data }

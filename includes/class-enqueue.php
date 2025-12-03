@@ -33,7 +33,7 @@ class Enqueue {
 
 			wp_localize_script(
 				'tsproduct-admin-script',
-				'tsteam_settings',
+				'tsproduct_settings',
 				array(
 					'ajax_url'   => admin_url( 'admin-ajax.php' ),
 					'admin_url'  => get_admin_url(),

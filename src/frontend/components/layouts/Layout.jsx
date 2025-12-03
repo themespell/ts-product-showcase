@@ -1,6 +1,21 @@
 import { useState, useEffect } from 'react';
 
-function Layout({ settings, layoutType, id, imageUrl, title, subtitle, description, socialIcons, details, animationConfig }) {
+function Layout({
+                    settings,
+                    layoutType,
+                    id,
+                    title,
+                    imageUrl,
+                    productGallery,
+                    categories,
+                    price,
+                    regularPrice,
+                    salePrice,
+                    sku,
+                    stockStatus,
+                    description,
+                    cartUrl,
+                    details, animationConfig }) {
     const [Component, setComponent] = useState(null);
 
     useEffect(() => {
@@ -26,11 +41,17 @@ function Layout({ settings, layoutType, id, imageUrl, title, subtitle, descripti
             <Component
                 settings={settings}
                 id={id}
-                imageUrl={imageUrl}
                 title={title}
-                subtitle={subtitle}
+                imageUrl={imageUrl}
+                productGallery={productGallery}
+                categories={categories}
+                price={price}
+                regularPrice={regularPrice}
+                salePrice={salePrice}
+                sku={sku}
+                stockStatus={stockStatus}
                 description={description}
-                socialIcons={socialIcons}
+                cartUrl={cartUrl}
                 details={details}
                 animationConfig={animationConfig}
             />

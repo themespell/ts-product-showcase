@@ -9,8 +9,8 @@ import {getTranslations} from "../../common/utils/translations.js";
 
 function Topbar({ type, onCopySettings, onPasteSettings}) {
     const translations = getTranslations();
-    const tsteamLogo = tsteam_settings.assets_path;
-    const isPro = !!tsteam_settings.is_pro ?? null;
+    const tsteamLogo = tsproduct_settings.assets_path;
+    const isPro = !!tsproduct_settings.is_pro ?? null;
     const isLicenseInactive = !!window.tsTeamPro?.is_licence_inactive ?? null;
 
     const { viewport, setViewport } = editorLocal();

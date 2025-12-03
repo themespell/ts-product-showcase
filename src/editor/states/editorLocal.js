@@ -3,7 +3,7 @@ import editorHelper from "./editorHelper.js";
 import proLayouts from "../../pro_support/proLayouts.js";
 
 // Get layouts from Pro version
-const isPro = tsteam_settings.is_pro
+const isPro = tsproduct_settings.is_pro
 const isLicenseInactive = !!window.tsTeamPro?.is_licence_inactive ?? null;
 const pro_layouts = proLayouts();
 

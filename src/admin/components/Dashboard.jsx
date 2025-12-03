@@ -3,7 +3,7 @@ import TsButton from "../../common/components/controls/TsButton.jsx";
 import {getTranslations} from "../../common/utils/translations.js";
 
 function Dashboard() {
-    const tsteamImage = tsteam_settings.assets_path;
+    const tsteamImage = tsproduct_settings.assets_path;
     const translations = getTranslations();
     return (
         <div className="min-h-fit flex">

@@ -23,7 +23,7 @@ function DataTable({ type, title, editor }) {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [deleteId, setDeleteId] = useState(null);
 
-  const isPro = window.tsteam_settings?.is_pro || false;
+  const isPro = window.tsproduct_settings?.is_pro || false;
   const isLicenseInactive = window.tsTeamPro?.is_licence_inactive || false;
   const canDuplicate = isPro && !isLicenseInactive;
 

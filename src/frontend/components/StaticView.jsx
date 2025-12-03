@@ -87,10 +87,16 @@ function StaticView({ team_members, settings, viewport, isEditor }) {
                 layoutType={settings.selectedLayout.value}
                 id={member.post_id}
                 imageUrl={member.image_url}
+                productGallery={member.gallery_urls}
+                categories={member.categories}
                 title={member.title}
-                subtitle={member.price}
-                // description={member.meta_data.description}
-                // socialIcons={member.meta_data.socialLinks || []}
+                price={member.price}
+                regularPrice={member.regular_price}
+                salePrice={member.sale_price}
+                sku={member.sku}
+                stockStatus={member.stock_status}
+                description={member.content}
+                cartUrl={member.add_to_cart_url}
                 // details={<Details settings={settings} member={member} />}
                 animationConfig={animationConfig}
               />
