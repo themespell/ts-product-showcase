@@ -62,7 +62,8 @@ function TeamShowcaseFields({ form, post_id }) {
             rules={[{ required: true, message: 'Please select products'}]}
         >
           <TsAdvanceSelect
-              label={translations.teamMember}
+              // label={translations.teamMember}
+              label="Available Products"
               defaultValue={form.getFieldValue('products')}
               options={products}
               mode="multiple"

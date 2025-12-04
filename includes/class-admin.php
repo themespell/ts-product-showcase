@@ -43,14 +43,14 @@ class Admin {
 			'ts-product-showcase&path=showcase',
 			array( $this, 'tsproduct_callback' ),
 		);
-		add_submenu_page(
-        	$parent,
-        	__( 'Tools', 'ts-product-showcase' ),
-        	__( 'Tools', 'ts-product-showcase' ),
-        	'manage_options',
-        	'tsteam-showcase&path=tools',
-        	array( $this, 'tsproduct_callback' ),
-        );
+// 		add_submenu_page(
+//         	$parent,
+//         	__( 'Tools', 'ts-product-showcase' ),
+//         	__( 'Tools', 'ts-product-showcase' ),
+//         	'manage_options',
+//         	'tsteam-showcase&path=tools',
+//         	array( $this, 'tsproduct_callback' ),
+//         );
 
 		remove_submenu_page($parent, $parent);
 	}

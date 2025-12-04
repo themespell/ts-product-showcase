@@ -1,6 +1,6 @@
-=== TS Product Showcase ===
+=== Product Showcase For WooCommerce ===
 Contributors: themespell, asadabir
-Tags: product showcase
+Tags: product showcase, woocommerce product showcase, product layouts, product grid, product table
 Requires at least: 5.5
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -86,7 +86,10 @@ The plugin is open source and available on GitHub at [https://github.com/themesp
 == Changelog ==
 
 = 0.0.5=
-* Added Core Repo to Readme
+* Added Card Basic Layout
+* Added Card Advance Layout
+* Fixed String Bug Issue
+* Readme Updated
 
 = 0.0.4 =
 * Readme Updated

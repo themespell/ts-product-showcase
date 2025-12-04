@@ -58,10 +58,10 @@ const globalSettings = {
               link: '?page=ts-product-showcase&path=showcase',
               label: translations.productShowcase,
           },
-          tools:{
-              link: '?page=tsteam-showcase&path=tools',
-              label: translations.tools,
-          },
+          // tools:{
+          //     link: '?page=tsteam-showcase&path=tools',
+          //     label: translations.tools,
+          // },
           ...(isPro && {
               account:{
                   link: 'admin.php?page=tsteam-pro-account',
@@ -79,7 +79,7 @@ const globalSettings = {
                 label: translations.getPro,
             }
         }),
-      version: '0.0.1',
+      version: '0.0.5',
     }
   };
   
