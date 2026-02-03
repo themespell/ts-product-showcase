@@ -72,13 +72,18 @@ function StaticView({ team_members, settings, viewport, isEditor }) {
             {ProLayoutComponent ? (
               <ProLayoutComponent
                 settings={settings}
-                imageUrl={member.meta_data.image}
+                imageUrl={member.image_url || member.meta_data?.image}
                 id={member.post_id}
                 title={member.title}
-                subtitle={member.meta_data.designation}
-                description={member.meta_data.description}
-                socialIcons={member.meta_data.socialLinks || []}
-                details={<Details settings={settings} member={member} />}
+                categories={member.categories}
+                price={member.price}
+                regularPrice={member.regular_price}
+                salePrice={member.sale_price}
+                cartUrl={member.add_to_cart_url}
+                description={member.content || member.meta_data?.description}
+                productGallery={member.gallery_urls}
+                sku={member.sku}
+                stockStatus={member.stock_status}
                 animationConfig={animationConfig}
               />
             ) : (

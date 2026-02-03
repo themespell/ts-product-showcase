@@ -80,30 +80,36 @@ function ConfettiView({ team_members, settings, viewport, isEditor }) {
                             <ProLayoutComponent
                                 settings={settings}
                                 id={member.post_id}
-                                imageUrl={member.meta_data.image}
+                                imageUrl={member.image_url || member.meta_data?.image}
                                 title={member.title}
-                                subtitle={member.meta_data.designation}
-                                description={member.description}
-                                socialIcons={member.socialIcons || []}
-                                details={<Details
-                                    settings={settings}
-                                    member={member}
-                                />}
+                                categories={member.categories}
+                                price={member.price}
+                                regularPrice={member.regular_price}
+                                salePrice={member.sale_price}
+                                cartUrl={member.add_to_cart_url}
+                                description={member.content || member.description}
+                                productGallery={member.gallery_urls}
+                                sku={member.sku}
+                                stockStatus={member.stock_status}
+                                animationConfig={animationConfig}
                             />
                         ) : (
                             <Layout
                                 settings={settings}
                                 layoutType={settings.selectedLayout.value}
                                 id={member.post_id}
-                                imageUrl={member.meta_data.image}
+                                imageUrl={member.image_url || member.meta_data?.image}
                                 title={member.title}
-                                subtitle={member.meta_data.designation}
-                                description={member.description}
-                                socialIcons={member.socialIcons || []}
-                                details={<Details
-                                    settings={settings}
-                                    member={member}
-                                />}
+                                productGallery={member.gallery_urls}
+                                categories={member.categories}
+                                price={member.price}
+                                regularPrice={member.regular_price}
+                                salePrice={member.sale_price}
+                                sku={member.sku}
+                                stockStatus={member.stock_status}
+                                description={member.content || member.description}
+                                cartUrl={member.add_to_cart_url}
+                                animationConfig={animationConfig}
                             />
                         )}
                     </div>

@@ -45,11 +45,11 @@ function TsAdvanceSelect({
 
     // Custom option renderer
     const optionRender = (option) => {
-        const { data } = option;
+        const { data } = option || {};
         return (
             <div className="flex items-center gap-3 py-2">
                 {/* Product Image */}
-                {showImage && data.image && (
+                {showImage && data?.image && (
                     <div
                         className="flex-shrink-0 rounded overflow-hidden"
                         style={{
@@ -80,22 +80,22 @@ function TsAdvanceSelect({
                 <div className="flex-1 min-w-0">
                     {/* Product Name */}
                     <div className="font-medium text-gray-900 truncate">
-                        {data.label}
+                        {data?.label}
                     </div>
 
                     {/* Price and SKU Container */}
                     <div className="flex items-center gap-3 mt-1">
                         {/* Product Price */}
-                        {showPrice && data.price && (
+                        {showPrice && data?.price && (
                             <span className="text-sm font-semibold text-green-600">
-                {pricePrefix}{data.price}
+                {pricePrefix}{data?.price}
               </span>
                         )}
 
                         {/* Product SKU */}
-                        {showSku && data.sku && (
+                        {showSku && data?.sku && (
                             <span className="text-xs text-gray-500">
-                {skuPrefix}{data.sku}
+                {skuPrefix}{data?.sku}
               </span>
                         )}
                     </div>
@@ -106,8 +106,8 @@ function TsAdvanceSelect({
 
     // Custom label renderer for selected value
     const labelRender = (props) => {
-        const { label, value } = props;
-        const selectedOption = options.find(opt => opt.value === value);
+        const { label, value } = props || {};
+        const selectedOption = options?.find((opt) => opt.value === value);
 
         if (!selectedOption) return label;
 
