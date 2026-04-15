@@ -3,14 +3,13 @@ import globalSettings from '../../common/utils/globalSettings.js';
 function Navigation() {
   const { navigation } = globalSettings;
   const currentUrl = new URL(window.location.href);
-  const currentPath = currentUrl.search; // Gets the query string part like '?page=tsteam-showcase'
-  console.log('from navigation component')
+  const currentPath = currentUrl.search;
   return (
     <>
-      <li className="wp-has-submenu wp-has-current-submenu wp-menu-open menu-top toplevel_page_tsteam-admin">
+      <li className="wp-has-submenu wp-has-current-submenu wp-menu-open menu-top toplevel_page_ts-product-showcase">
         <a
-          href="admin.php?page=tsteam-showcase"
-          className="tsteam__color--bg wp-has-submenu wp-menu-open menu-top toplevel_page_tsteam-admin ts-glow"
+          href="admin.php?page=ts-product-showcase"
+          className="tsteam__color--bg wp-has-submenu wp-menu-open menu-top toplevel_page_ts-product-showcase ts-glow"
         >
           <div className="wp-menu-arrow">
             <div></div>
@@ -20,11 +19,11 @@ function Navigation() {
               src={navigation.menuicon}
             />
           </div>
-          <div className="wp-menu-name">TS Team</div>
+          <div className="wp-menu-name">TS Product Showcase</div>
         </a>
 
         <ul className="bg-white wp-submenu wp-submenu-wrap">
-          <li className="wp-submenu-head" aria-hidden="true">TS Team</li>
+          <li className="wp-submenu-head" aria-hidden="true">TS Product Showcase</li>
           {Object.keys(navigation).map((key) => {
             const item = navigation[key];
             const IconComponent = item.icon;

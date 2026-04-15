@@ -39,7 +39,7 @@ function Topbar({ title }) {
 
                     {/* Icons */}
                     <div className="relative flex gap-4">
-                        <a href="https://wordpress.org/support/plugin/ts-team-member" target="_blank"><CircleHelp size={24} strokeWidth={1.5} className="tsteam__color--link" /></a>
+                        <a href="https://wordpress.org/support/plugin/ts-product-showcase" target="_blank" rel="noreferrer"><CircleHelp size={24} strokeWidth={1.5} className="tsteam__color--link" /></a>
                         <Bell size={24} strokeWidth={1.5} className="tsteam__color--link" />
                         <a href="admin.php?page=tsteam-pro-account"><UserRound size={24} strokeWidth={1.5} className="tsteam__color--link"/></a>
                     </div>

@@ -13,6 +13,7 @@ class Strings {
             // Existing strings
             'dashboard'              => __('Dashboard', 'ts-product-showcase'),
             'product_showcase'       => __('Product Showcase', 'ts-product-showcase'),
+            'team_showcase'          => __('Product Showcase', 'ts-product-showcase'),
             'team_member'            => __('Team Member', 'ts-product-showcase'),
             'tools'                  => __('Tools', 'ts-product-showcase'),
             'account'                => __('Account', 'ts-product-showcase'),
@@ -29,6 +30,7 @@ class Strings {
             'settings'               => __('Tools', 'ts-product-showcase'),
             'update'                 => __('Update', 'ts-product-showcase'),
             'publish'                => __('Publish', 'ts-product-showcase'),
+            'duplicate'              => __('Duplicate', 'ts-product-showcase'),
             'title'                  => __('Title', 'ts-product-showcase'),
             'shortcode'              => __('Shortcode', 'ts-product-showcase'),
             'snippet'                => __('Snippet', 'ts-product-showcase'),

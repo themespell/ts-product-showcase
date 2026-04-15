@@ -16,9 +16,9 @@ class Elementor {
 
     public function register_ts_product_category($elements_manager) {
         $elements_manager->add_category(
-            'ts-team-widgets',
+            'ts-product-widgets',
             [
-                'title' => esc_html__('TS Team Widgets', 'ts-product-showcase'),
+                'title' => esc_html__('TS Product Widgets', 'ts-product-showcase'),
             ]
         );
     }

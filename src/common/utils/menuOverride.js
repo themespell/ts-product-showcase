@@ -1,5 +1,5 @@
 export function menuOverride() {
-    const submenu = document.getElementById('toplevel_page_tsteam-admin');
+    const submenu = document.getElementById('toplevel_page_ts-product-showcase');
 
     if (submenu) {
         const currentUrl = window.location.href.split('admin.php')[1] || '';

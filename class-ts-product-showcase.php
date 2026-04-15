@@ -111,8 +111,8 @@ final class TSPRODUCT {
                             'has_addons'          => false,
                             'has_paid_plans'      => false,
                             'menu' => array(
-                                'slug'           => 'tsteam-admin',
-                                'first-path'     => 'admin.php?page=tsteam-showcase',
+                                'slug'           => 'ts-product-showcase',
+                                'first-path'     => 'admin.php?page=ts-product-showcase',
                             ),
                         ) );
                     }

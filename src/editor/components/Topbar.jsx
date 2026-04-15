@@ -10,8 +10,8 @@ import {getTranslations} from "../../common/utils/translations.js";
 function Topbar({ type, onCopySettings, onPasteSettings}) {
     const translations = getTranslations();
     const tsteamLogo = tsproduct_settings.assets_path;
-    const isPro = !!tsproduct_settings.is_pro ?? null;
-    const isLicenseInactive = !!window.tsTeamPro?.is_licence_inactive ?? null;
+    const isPro = Boolean(tsproduct_settings.is_pro);
+    const isLicenseInactive = Boolean(window.tsTeamPro?.is_licence_inactive);
 
     const { viewport, setViewport } = editorLocal();
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -34,7 +34,6 @@ function Topbar({ type, onCopySettings, onPasteSettings}) {
     };
 
     const handleCodeClick = () => {
-        console.log('working')
         setIsModalVisible(true);
     };
 
@@ -147,12 +146,12 @@ function Topbar({ type, onCopySettings, onPasteSettings}) {
                     {/* Text Content */}
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Shortcode</h3>
                     <div className="mockup-code tsteam__color--bg-alt text-white">
-                        <pre data-prefix="$"><code>[tsteam_showcase id="{post_id}"]</code></pre>
+                        <pre data-prefix="$"><code>[ts_product_showcase id="{post_id}"]</code></pre>
                     </div>
 
                     <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-2">PHP Snippet</h3>
                     <div className="mockup-code tsteam__color--bg-alt text-white">
-                        <pre data-prefix="$"><code>echo do_shortcode('[tsteam_showcase id="{post_id}"]');</code></pre>
+                        <pre data-prefix="$"><code>echo do_shortcode('[ts_product_showcase id="{post_id}"]');</code></pre>
                     </div>
 
                     {/* Buttons */}

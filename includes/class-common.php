@@ -31,7 +31,11 @@ class Common {
 		$targeted_screen = 'ts-team_page_tsteam-showcase';
 		$targeted_screen_02 = 'toplevel_page_ts-product-showcase';
 
-		if ( $targeted_screen === $current_screen->base || $targeted_screen_02 === $current_screen->base) {
+		if (
+			$targeted_screen === $current_screen->base ||
+			$targeted_screen_02 === $current_screen->base ||
+			false !== strpos( $current_screen->base, 'ts-product-showcase' )
+		) {
 			return true;
 		}
 		return false;

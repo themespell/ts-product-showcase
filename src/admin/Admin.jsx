@@ -58,7 +58,7 @@ function AdminPanel() {
     } else {
         return (
             <>
-                <Topbar title={isTeamMemberPage ? translations.teamMember : translations.teamShowcase}/>
+                <Topbar title={isTeamMemberPage ? translations.teamMember : translations.productShowcase}/>
                 <div className='tsteam__admin--style overflow-x-auto w-full flex justify-center pt-12 pb-12'>
                     <div className='flex justify-between gap-8 w-4/6'>
                         <div className='w-full'>

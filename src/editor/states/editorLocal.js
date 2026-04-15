@@ -4,7 +4,7 @@ import proLayouts from "../../pro_support/proLayouts.js";
 
 // Get layouts from Pro version
 const isPro = tsproduct_settings.is_pro
-const isLicenseInactive = !!window.tsTeamPro?.is_licence_inactive ?? null;
+const isLicenseInactive = Boolean(window.tsTeamPro?.is_licence_inactive);
 const pro_layouts = proLayouts();
 
 // Split layouts by categories

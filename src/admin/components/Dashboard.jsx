@@ -13,7 +13,7 @@ function Dashboard() {
                     heading={'Unlock Ts Product Showcase with an Exclusive Discount!'}
                     description={'Take your experience to the next level with TS Product Showcase Pro Version. For a limited time, we’re offering an exclusive early bird discount—don’t miss out!'}
                     label={translations.grabYourDiscount}
-                    ctalink={'https://themespell.com/ts-product/ts-team-member/'}
+                    ctalink={'https://themespell.com/ts-product-showcase'}
                 />
                 {/*<img src={`${tsteamImage}/img/tsteam_dashboard_cover.png`} className="mt-8 tsteam__global--border w-full"/>*/}
 
@@ -50,7 +50,7 @@ function Dashboard() {
                         <h2 className="mt-4 text-xl">{translations.upgradeToPro}</h2>
                         <p className="mt-4 mb-4 text-center">Exciting new features and updates are on the way! Stay tuned for
                             enhancements that will make your TS Product Showcase plugin even more powerful.</p>
-                        <a className="tsteam-button btn btn-primary" href="https://themespell.com/ts-product/ts-team-member/">Grab Discount</a>
+                        <a className="tsteam-button btn btn-primary" href="https://themespell.com/ts-product-showcase">Grab Discount</a>
                     </div>
                 </div>
             </div>

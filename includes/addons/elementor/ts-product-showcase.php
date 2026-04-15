@@ -39,14 +39,14 @@ class TSTeam_Showcase extends Widget_Base {
 
         // Get all TSTeam posts
         $team_posts = get_posts([
-            'post_type' => 'tsteam-showcase',
+            'post_type' => 'ts-product-showcase',
             'posts_per_page' => -1,
             'orderby' => 'title',
             'order' => 'ASC',
         ]);
 
         // Prepare options
-        $options = ['' => esc_html__('Select a Team Showcase', 'ts-product-showcase')];
+        $options = ['' => esc_html__('Select a Product Showcase', 'ts-product-showcase')];
         foreach ( $team_posts as $post ) {
             // translators: %d is the post ID number
             $options[$post->ID] = !empty($post->post_title) ? $post->post_title : sprintf(__('#%d (No title)', 'ts-product-showcase'), $post->ID);
@@ -56,7 +56,7 @@ class TSTeam_Showcase extends Widget_Base {
         $this->add_control(
             'team_id',
             [
-                'label' => esc_html__( 'Select Team Showcase', 'ts-product-showcase' ),
+                'label' => esc_html__( 'Select Product Showcase', 'ts-product-showcase' ),
                 'type' => Controls_Manager::SELECT,
                 'options' => $options,
                 'default' => '',
@@ -72,10 +72,10 @@ class TSTeam_Showcase extends Widget_Base {
 
         if ( empty( $settings['team_id'] ) ) {
             echo '<div class="tsteam-placeholder">';
-            echo esc_html__( 'Please select a team showcase to display', 'ts-product-showcase' );
+            echo esc_html__( 'Please select a product showcase to display', 'ts-product-showcase' );
             echo '</div>';
             return;
         }
-        echo do_shortcode( '[tsteam_showcase id="' . esc_attr( $settings['team_id'] ) . '"]' );
+        echo do_shortcode( '[ts_product_showcase id="' . esc_attr( $settings['team_id'] ) . '"]' );
     }
 }

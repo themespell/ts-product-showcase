@@ -65,7 +65,7 @@ function DataTable({ type, title, editor }) {
       }));
 
         const actionColumn = {
-          title: 'Action',
+          title: translations.action,
           key: 'action',
           render: (_, record) => (
               <Dropdown
@@ -102,7 +102,7 @@ function DataTable({ type, title, editor }) {
                                     <div style={{ width: '20px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
                                         <Copy size={20} className={canDuplicate ? "tsteam__color--icon" : "text-gray-500"} />
                                     </div>
-                                    <span className={!canDuplicate ? "text-gray-500" : ""} style={{ flexGrow: 1 }}>{translations.duplicate || 'Duplicate'}</span>
+                                    <span className={!canDuplicate ? "text-gray-500" : ""} style={{ flexGrow: 1 }}>{translations.duplicate}</span>
                                     {!canDuplicate && (
                                         <span className="bg-amber-500 text-white text-xs px-2 py-0.5 rounded font-medium">PRO</span>
                                     )}
@@ -147,6 +147,11 @@ function DataTable({ type, title, editor }) {
       setLoading(false);
     });
   }, [type, reloadData]);
+
+  const handleProFeature = (feature) => {
+    const featureName = feature === 'duplicate' ? translations.duplicate : feature;
+    toastNotification('info', 'Pro Feature', `${featureName} is available in the Pro version.`);
+  };
 
     const handleDelete = (post_id) => {
         setDeleteId(post_id);

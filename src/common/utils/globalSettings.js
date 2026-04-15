@@ -1,6 +1,6 @@
 import {getTranslations} from "./translations.js";
 
-const isPro = !!tsproduct_settings.is_pro ?? false;
+const isPro = Boolean(tsproduct_settings.is_pro);
 
 const translations = getTranslations();
 
@@ -34,17 +34,17 @@ const globalSettings = {
     navigation: {
       dashboard:{
         link: '?page=ts-product-showcase&path=dashboard',
-        label: 'Dashboard',
+        label: translations.dashboard,
         icon: ''
       },
       teamShowcase:{
-        link: '?page=tsteam-showcase',
-        label: 'Team Showcase',
+        link: '?page=ts-product-showcase&path=showcase',
+        label: translations.productShowcase,
         icon: ''
       },
       teamMember:{
-        link: '?page=tsteam-showcase&path=team-member',
-        label: 'Team Member',
+        link: '?page=ts-product-showcase&path=team-member',
+        label: translations.teamMember,
         icon: ''
       },
     },
@@ -59,7 +59,7 @@ const globalSettings = {
               label: translations.productShowcase,
           },
           // tools:{
-          //     link: '?page=tsteam-showcase&path=tools',
+          //     link: '?page=ts-product-showcase&path=tools',
           //     label: translations.tools,
           // },
           ...(isPro && {
@@ -69,13 +69,13 @@ const globalSettings = {
               }
           }),
           supportForum:{
-              link: 'https://wordpress.org/support/plugin/ts-team-member',
+              link: 'https://wordpress.org/support/plugin/ts-product-showcase',
               label: translations.supportForum,
           },
       },
         ...(isPro ? {} : {
             proLink: {
-                link: 'https://themespell.com/ts-product/ts-team-member/',
+                link: 'https://themespell.com/ts-product-showcase',
                 label: translations.getPro,
             }
         }),

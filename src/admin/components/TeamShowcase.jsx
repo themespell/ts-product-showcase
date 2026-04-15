@@ -9,7 +9,7 @@ function TeamShowcase() {
       <div className="flex-1">
       <Container
             type='product_showcase'
-            title={translations.teamShowcase}
+            title={translations.productShowcase}
             editor={true}
         />
       </div>

@@ -10,7 +10,7 @@ function Tools() {
             description: 'Effortlessly migrate data between platforms with our tool.',
             icon: <Cloud size={40} />,
             cta: 'Access Now',
-            link: 'admin.php?page=tsteam-showcase&path=migration',
+            link: 'admin.php?page=ts-product-showcase&path=migration',
         },
         {
             id: 2,
