@@ -5,6 +5,7 @@ import { getCommonStyles } from "./helper/commonStyle.js";
 import { getResponsiveStyles } from "./helper/responsiveStyles.js";
 import {getProLayout} from "./helper/getProLayout.js";
 import {getMarqueeStyles} from "./helper/marqueeStyles.js";
+import { getAnimationClasses } from "./helper/motionControl.js";
 
 import Details from "./details/details.jsx";
 import GenerateLayoutStyle from "./helper/generateLayoutStyle.js";
@@ -23,6 +24,11 @@ function MarqueeView({ team_members, settings, viewport, isEditor }) {
     useMemo(() => {
         setProLayoutComponent(() => getProLayout(settings));
     }, [settings?.selectedLayout?.type, settings?.selectedLayout?.value]);
+
+    const animationConfig = useMemo(() => {
+        const hoverAnimation = settings?.hoverAnimation || "none";
+        return getAnimationClasses(hoverAnimation);
+    }, [settings?.hoverAnimation]);
 
     useEffect(() => {
         const updateResponsiveStyles = () => {

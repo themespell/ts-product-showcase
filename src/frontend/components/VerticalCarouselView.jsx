@@ -5,6 +5,7 @@ import { getCommonStyles } from './helper/commonStyle.js';
 import { getResponsiveStyles } from './helper/responsiveStyles.js';
 import { getCarouselStyles } from './helper/carouselStyles.js';
 import { getProLayout } from "./helper/getProLayout.js";
+import { getAnimationClasses } from "./helper/motionControl.js";
 
 import Details from "./details/details.jsx";
 import MarqueeSlider from "./library/SliderChild/MarqueeSlider.jsx";
@@ -25,6 +26,11 @@ function VerticalCarouselView({ team_members, settings, viewport, isEditor }) {
     useMemo(() => {
         setProLayoutComponent(() => getProLayout(settings));
     }, [settings?.selectedLayout?.type, settings?.selectedLayout?.value]);
+
+    const animationConfig = useMemo(() => {
+        const hoverAnimation = settings?.hoverAnimation || "none";
+        return getAnimationClasses(hoverAnimation);
+    }, [settings?.hoverAnimation]);
 
     useEffect(() => {
         const updateStyles = () => {

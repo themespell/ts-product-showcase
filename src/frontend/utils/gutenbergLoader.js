@@ -1,4 +1,6 @@
 export function gutenbergLoader(initializeReact) {
+    const showcaseSelector = '.ts-product-showcase';
+
     // Check if we're in the Gutenberg editor
     if (window.wp && window.wp.data && window.wp.data.select) {
         const isGutenbergEditor = !!window.wp.data.select('core/edit-post') || !!window.wp.data.select('core/editor');
@@ -11,9 +13,9 @@ export function gutenbergLoader(initializeReact) {
                         mutation.addedNodes.forEach((node) => {
                             if (node.nodeType === Node.ELEMENT_NODE) {
                                 // Check for direct matches or nested matches
-                                const showcaseElements = node.matches('.tsteam-showcase')
+                                const showcaseElements = node.matches(showcaseSelector)
                                     ? [node]
-                                    : node.querySelectorAll('.tsteam-showcase');
+                                    : node.querySelectorAll(showcaseSelector);
                                 showcaseElements.forEach((element) => {
                                     console.log('Initializing React for element:', element);
                                     initializeReact(element);

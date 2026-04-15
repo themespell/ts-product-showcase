@@ -1,4 +1,6 @@
 export function elementorLoader(initializeReact) {
+    const showcaseSelector = '.ts-product-showcase';
+
     if (!window.elementorFrontend || !window.elementorFrontend.isEditMode()) {
         console.log("Not in Elementor editor mode. Skipping Elementor-specific logic.");
         return;
@@ -8,7 +10,7 @@ export function elementorLoader(initializeReact) {
         mutations.forEach((mutation) => {
             mutation.addedNodes.forEach((node) => {
                 if (node.nodeType === Node.ELEMENT_NODE) {
-                    const newShowcaseElements = node.querySelectorAll('.tsteam-showcase');
+                    const newShowcaseElements = node.querySelectorAll(showcaseSelector);
                     newShowcaseElements.forEach((element) => {
                         initializeReact(element);
                     });
@@ -25,7 +27,7 @@ export function elementorLoader(initializeReact) {
         const widgetContainer = widget.$el[0]; // Get the widget container
 
         // Check if this is a TS Team Showcase widget
-        if (widgetContainer.classList.contains('tsteam-showcase')) {
+        if (widgetContainer.classList.contains('ts-product-showcase')) {
             initializeReact(widgetContainer); // Re-initialize React for this widget
         }
     });

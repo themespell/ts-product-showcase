@@ -67,7 +67,7 @@ function StaticView({ team_members, settings, viewport, isEditor }) {
     >
       <GenerateLayoutStyle settings={settings} />
       {team_members && team_members.length > 0 ? (
-        team_members.map((member, index) => (
+        team_members.filter(Boolean).map((member, index) => (
           <Fragment key={index}>
             {ProLayoutComponent ? (
               <ProLayoutComponent

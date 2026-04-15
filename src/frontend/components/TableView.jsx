@@ -6,7 +6,7 @@ import { getProLayout } from "./helper/getProLayout.js";
 
 import Details from "./details/details.jsx";
 
-function TableView({ team_members, settings, viewport, isEditor, Details }) {
+function TableView({ team_members, settings, viewport, isEditor }) {
     const [ProLayoutComponent, setProLayoutComponent] = useState(null);
     const commonStyles = getCommonStyles(settings);
     const [responsiveStyles, setResponsiveStyles] = useState(

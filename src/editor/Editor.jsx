@@ -106,42 +106,42 @@ function Editor() {
             >
               {allSettings.selectedView.value === "flex" ? (
                       <FlexView
-                          team_members={postData.products}
+                          team_members={postData?.products || []}
                           settings={allSettings}
                           viewport={viewport}
                           isEditor={isEditor}
                       />
                   ) : allSettings.selectedView.value === "carousel" ? (
                   <CarouselView
-                      team_members={postData.team_members}
+                      team_members={postData?.products || []}
                       settings={allSettings}
                       viewport={viewport}
                       isEditor={isEditor}
                   />
               ) : allSettings.selectedView.value === "marquee" && isPro ? (
                   <MarqueeView
-                      team_members={postData.team_members}
+                      team_members={postData?.products || []}
                       settings={allSettings}
                       viewport={viewport}
                       isEditor={isEditor}
                   />
               ) : allSettings.selectedView.value === "table" && isPro ? (
                       <TableView
-                          team_members={postData.team_members}
+                          team_members={postData?.products || []}
                           settings={allSettings}
                           viewport={viewport}
                           isEditor={isEditor}
                       />
               ) : allSettings.selectedView.value === "confetti" && isPro ? (
                   <ConfettiView
-                      team_members={postData.team_members}
+                      team_members={postData?.products || []}
                       settings={allSettings}
                       viewport={viewport}
                       isEditor={isEditor}
                   />
               ) : (
                   <StaticView
-                      team_members={postData.products}
+                      team_members={postData?.products || []}
                       settings={allSettings}
                       viewport={viewport}
                       isEditor={isEditor}
