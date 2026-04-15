@@ -2,9 +2,9 @@
 Contributors: themespell, asadabir
 Tags: product showcase, woocommerce product showcase, product layouts, product grid, product table
 Requires at least: 5.5
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 0.0.5
+Stable tag: 0.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -84,6 +84,12 @@ Yes, the plugin includes a live editing feature, allowing you to see real-time c
 The plugin is open source and available on GitHub at [https://github.com/themespell/ts-product-showcase](https://github.com/themespell/ts-product-showcase).
 
 == Changelog ==
+
+= 0.0.6=
+* Fixed Carousel & Marquee View
+* Fixed Pro Support
+* Fixed Undefined Issue
+* Readme Updated
 
 = 0.0.5=
 * Added Card Basic Layout
